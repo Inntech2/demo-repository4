@@ -1,0 +1,17 @@
+
+{
+    "IgnoredFlaws": [
+        {
+            "filename": "com/veracode/verademo/controller/UserController.java",
+            "comments": "comments",
+            "cweid": 89,
+            "flawhash": 3392777041,
+            "flawHashCount": 1,
+            "flawHashOrdinal": 1,
+            "causehash": 1176028798,
+            "causeHashOrdinal": 1,
+            "prototypehash": 839857025,
+            "procedurehash": 490034839
+        }
+    ]
+}
