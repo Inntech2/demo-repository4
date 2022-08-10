@@ -6,7 +6,7 @@ steps:
   - task: Maven@3
     displayName: Build with Maven
     inputs:
-      mavenPomFile: "app/pom.xml"
+      mavenPomFile: "Verademo-main/app/pom.xml"
       mavenOptions: "-Xmx3072m"
       javaHomeOption: "JDKVersion"
       jdkVersionOption: "1.8"
