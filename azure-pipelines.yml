@@ -1,3 +1,4 @@
+#Prueba Pipeline Scan
 trigger:
   - master
   - integracion
