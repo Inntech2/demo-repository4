@@ -16,6 +16,7 @@ steps:
       goals: "package"
   - task: Bash@3
     displayName: Veracode Pipeline Scan
+    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/featureX'))
     inputs:
       targetType: "inline"
       script: |
