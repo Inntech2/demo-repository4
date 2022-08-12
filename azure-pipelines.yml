@@ -35,7 +35,7 @@ steps:
     inputs:
       ConnectionDetailsSelection: 'Credentials'
       apiID: '$(VERACODE_API_ID)'
-      apiKey:'$(VERACODE_API_KEY)'
+      apiKey: '$(VERACODE_API_KEY)'
       veracodeAppProfile: 'verademo_azure_apa'
       version: '$(build.buildNumber)'
       filepath: 'target/verademo.war'
@@ -49,7 +49,7 @@ steps:
     inputs:
       ConnectionDetailsSelection: 'Credentials'
       apiID: '$(VERACODE_API_ID)'
-      apiKey:'$(VERACODE_API_KEY)'
+      apiKey: '$(VERACODE_API_KEY)'
       veracodeAppProfile: 'verademo_azure_apa'
       version: '$(build.buildNumber)'
       filepath: 'target/verademo.war'
