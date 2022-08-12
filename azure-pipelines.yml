@@ -38,7 +38,7 @@ steps:
       apiKey: '$(VERACODE_API_KEY)'
       veracodeAppProfile: 'verademo_azure_apa'
       version: '$(build.buildNumber)'
-      filepath: 'verademo-main/target/verademo.war'
+      filepath: '/home/vsts/work/1/s/verademo-main/app/target/verademo.war'
       sandboxName: 'devSandbox_Azure'
       createSandBox: false
       failBuildOnPolicyFail: true
@@ -52,7 +52,7 @@ steps:
       apiKey: '$(VERACODE_API_KEY)'
       veracodeAppProfile: 'verademo_azure_apa'
       version: '$(build.buildNumber)'
-      filepath: 'verademo-main/target/verademo.war'
+      filepath: '/home/vsts/work/1/s/verademo-main/app/target/verademo.war'
       failBuildOnPolicyFail: true
       maximumWaitTime: '360'
   - publish: 'verademo-main/results.json' # Save the scan results as a file named results.json.
