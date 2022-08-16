@@ -1,4 +1,13 @@
 #Prueba Pipeline Scan
+- task: Veracode@3
+  inputs:
+    ConnectionDetailsSelection: 'Credentials'
+    apiId: '9bc089de5061ba32b7a762ae1e51fb15'
+    apiKey: '2cfc58079cfd2b3e611fef326db7360e09d3a671c5b9e5ba6aba1d2ee1c1f763150c55967820a187383838e33770860182c7c257dba7ed6578c42e504cc266ef'
+    veracodeAppProfile: '$(system.teamProject)'
+    version: '$(build.buildNumber)'
+    filepath: '$(build.artifactstagingdirectory)'
+    maximumWaitTime: '360'
 trigger:
   - master
   - integracion
