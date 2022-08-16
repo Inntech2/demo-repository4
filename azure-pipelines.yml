@@ -29,20 +29,20 @@ steps:
       # VERACODE_API_ID and VERACODE_API_KEY environment variables must reference your API credentials.
       # "|| true" specifies to continue build if Pipeline Scan discovers flaws.
       # To fail the build for new flaws not listed in a baseline file, add an existing baseline file with "-bf <baseline filename>" and remove "|| true".
-  - task: Bash@3
-    displayName: Veracode Sandbox Scan
-    condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/integracion'))
-    inputs:
-      ConnectionDetailsSelection: 'Credentials'
-      apiID: '$(VERACODE_API_ID)'
-      apiKey: '$(VERACODE_API_KEY)'
-      veracodeAppProfile: 'verademo_azure_apa'
-      version: '$(build.buildNumber)'
-      filepath: '/home/vsts/work/1/s/verademo-main/app/target/verademo.war'
-      sandboxName: 'devSandbox_Azure'
-      createSandBox: false
-      failBuildOnPolicyFail: true
-      maximumWaitTime: '360'
+
+- task: Veracode@3
+  inputs:
+    ConnectionDetailsSelection: 'Credentials'
+    apiId: '$(VERACODE_API_ID)'
+    apiKey: '$(VERACODE_API_KEY)'
+    veracodeAppProfile: 'verademo_azure_apa'
+    version: '$(build.buildNumber)'
+    filepath: '/home/vsts/work/1/s/verademo-main/app/target/verademo.war'
+    sandboxName: 'devSandbox_Azure'
+    failBuildIfUploadAndScanBuildStepFails: true
+    failBuildOnPolicyFail: true
+    maximumWaitTime: '360'
+
   - task: Bash@3
     displayName: Veracode Policy Scan
     condition: and(succeeded(), eq(variables['build.sourceBranch'], 'refs/heads/master'))
