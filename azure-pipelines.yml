@@ -1,4 +1,11 @@
 #Prueba Pipeline Scan
+trigger:
+  - master
+  - integracion
+  - featureX
+pool:
+  vmImage: "ubuntu-latest"
+steps:
 - task: Veracode@3
   inputs:
     ConnectionDetailsSelection: 'Credentials'
@@ -8,13 +15,6 @@
     version: '$(build.buildNumber)'
     filepath: '$(build.artifactstagingdirectory)'
     maximumWaitTime: '360'
-trigger:
-  - master
-  - integracion
-  - featureX
-pool:
-  vmImage: "ubuntu-latest"
-steps:
   - task: Maven@3
     displayName: Build with Maven
     inputs:
