@@ -7,7 +7,6 @@ pool:
   vmImage: "ubuntu-latest"
 steps:
 - task: Veracode@3
-    displayName: Veracode Upload and Scan
     inputs:
       ConnectionDetailsSelection: 'Credentials'
       apiId: '9bc089de5061ba32b7a762ae1e51fb15'
